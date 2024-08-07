@@ -43,13 +43,12 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     val room_version = "2.6.1"
-    val lifecycle_version = "2.8.4"
+   
 
     implementation("androidx.room:room-runtime:$room_version")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.4.1")
 
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+
+
+
     annotationProcessor("androidx.room:room-compiler:$room_version")
 }
