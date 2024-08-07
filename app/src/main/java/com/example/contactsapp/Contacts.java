@@ -2,6 +2,7 @@ package com.example.contactsapp;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName ="contacts_table")
@@ -20,6 +21,7 @@ public class Contacts {
         this.email = email;
     }
 
+    @Ignore
     public Contacts() {
     }
 
@@ -47,3 +49,4 @@ public class Contacts {
         this.email = email;
     }
 }
+
