@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = mainBinding.recyclerview;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-        myAdapter = new MyAdapter(contactsArrayList);
         contactDatabase = ContactDatabase.getInstance(this);
         MyViewModel viewModel = new ViewModelProvider(this)
                 .get(MyViewModel.class);
@@ -55,10 +54,13 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onChanged(List<Contacts> contacts) {
 
+                        contactsArrayList.clear();
+
                         for(Contacts c:contacts){
                             Log.v("TAGY",c.getName());
                             contactsArrayList.add(c);
                         }
+                        myAdapter.notifyDataSetChanged();
                     }
                 });
 
